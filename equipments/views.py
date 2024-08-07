@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView,CreateView
+from django.urls import reverse_lazy
 from .models import Equipment
 from .forms import EquipmentForm
 
@@ -11,3 +12,9 @@ class IndexView(ListView):
 class CreateView(CreateView):
     form_class = EquipmentForm
     template_name = 'equipments/create.html'
+    success_url = reverse_lazy("equipments:equipment_list")
+
+    def form_valid(self, form):
+        equipment = form.save(commit=False)
+        equipment.save()
+        return super().form_valid(form)

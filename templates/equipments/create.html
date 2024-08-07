@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +12,7 @@
   <nav>
     <div class="nav-left">
       
-        <a href="/equipment/">備品一覧</a>
+        <a href="/equipment_list/">備品一覧</a>
         <a href="/order_history/">発注履歴</a>
       
     </div>
@@ -31,7 +32,7 @@
 </div>
 <div class="form-container">
   <form method="post" enctype="multipart/form-data">
-    <input type="hidden" name="csrfmiddlewaretoken" value="LTiV4jDXXg3G8WNhInInd4IqtCg1ou0DQzCPEYbWegdPYWcBW1KYdJN7wl6f7PaE">
+    {% csrf_token %}
     <div class="form-group">
       <label for="id_name">名前:</label>
       <input type="text" name="name" maxlength="100" required id="id_name">
@@ -50,8 +51,7 @@
     </div>
     <div class="form-group">
       <label for="id_description">説明:</label>
-      <textarea name="description" cols="40" rows="10" required id="id_description">
-</textarea>
+      <textarea name="description" cols="40" rows="10" required id="id_description"></textarea>
     </div>
     <div class="form-group">
       <label for="id_image">画像:</label>
