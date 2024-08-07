@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>備品を追加</title>
+  
+  <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-left">
+      
+        <a href="/equipment/">備品一覧</a>
+        <a href="/order_history/">発注履歴</a>
+      
+    </div>
+    <div class="nav-right">
+      
+        
+          <a href="/users/">ユーザー一覧</a>
+        
+        <a href="/logout/">ログアウト</a>
+      
+    </div>
+  </nav>
+  <div class="container">
+    
+<div class="header-banner">
+  <h1>備品を追加</h1>
+</div>
+<div class="form-container">
+  <form method="post" enctype="multipart/form-data">
+    <input type="hidden" name="csrfmiddlewaretoken" value="LTiV4jDXXg3G8WNhInInd4IqtCg1ou0DQzCPEYbWegdPYWcBW1KYdJN7wl6f7PaE">
+    <div class="form-group">
+      <label for="id_name">名前:</label>
+      <input type="text" name="name" maxlength="100" required id="id_name">
+    </div>
+    <div class="form-group">
+      <label for="id_category">カテゴリ:</label>
+      <input type="text" name="category" maxlength="100" required id="id_category">
+    </div>
+    <div class="form-group">
+      <label for="id_status">状態:</label>
+      <input type="text" name="status" maxlength="100" required id="id_status">
+    </div>
+    <div class="form-group">
+      <label for="id_location">設置場所:</label>
+      <input type="text" name="location" maxlength="100" required id="id_location">
+    </div>
+    <div class="form-group">
+      <label for="id_description">説明:</label>
+      <textarea name="description" cols="40" rows="10" required id="id_description">
+</textarea>
+    </div>
+    <div class="form-group">
+      <label for="id_image">画像:</label>
+      <input type="file" name="image" accept="image/*" required id="id_image">
+    </div>
+    <div class="form-group">
+      <label for="id_quantity">在庫数:</label>
+      <input type="number" name="quantity" value="1" min="0" required id="id_quantity">
+    </div>
+    <button type="submit" class="btn">追加</button>
+  </form>
+</div>
+
+  </div>
+</body>
+
+</html>

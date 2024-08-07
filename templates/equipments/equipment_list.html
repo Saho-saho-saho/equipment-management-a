@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>備品一覧</title>
+  
+  <link rel="stylesheet" type="text/css" href="./static/styles.css">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-left">
+      
+        <a href="#">備品一覧</a>
+        <a href="#">発注履歴</a>
+      
+    </div>
+    <div class="nav-right">
+      
+        
+          <a href="#">ユーザー一覧</a>
+        
+        <a href="#">ログアウト</a>
+      
+    </div>
+  </nav>
+  <div class="container">
+    
+<div class="header-banner">
+  <h1>備品一覧(開発チームA)</h1>
+</div>
+<div class="btn-container">
+  <a href="#" class="btn">備品を追加</a>
+</div>
+<div class="equipment-list">
+  <div class="equipment-item">
+    <div><strong>名前</strong></div>
+    <div><strong>カテゴリ</strong></div>
+    <div><strong>設置場所</strong></div>
+    <div><strong>在庫数</strong></div>
+  </div>
+  
+  {% for equipment in equipments %}
+  <div class="equipment-item">
+    <div><a href="#">{{ equipment.name }}</a></div>
+    <div>{{ equipment.category }}</div>
+    <div>{{ equipment.location }}</div>
+    <div>{{ equipment.quantity }}</div>
+  </div>
+  {% endfor %}
+  
+  <!-- <div class="equipment-item">
+    <div><a href="#">クリアファイル</a></div>
+    <div>文房具</div>
+    <div>B1倉庫</div>
+    <div>在庫数: 5</div>
+  </div>
+  
+  <div class="equipment-item">
+    <div><a href="#">輪ゴム</a></div>
+    <div>文房具</div>
+    <div>B1倉庫</div>
+    <div>在庫数: 5</div>
+  </div>
+  
+  <div class="equipment-item">
+    <div><a href="#">ボールペン</a></div>
+    <div>文房具</div>
+    <div>B2 倉庫</div>
+    <div>在庫数: 10000</div>
+  </div>
+  
+  <div class="equipment-item">
+    <div><a href="#">ボールペン</a></div>
+    <div>文房具</div>
+    <div>99F倉庫</div>
+    <div>在庫数: 999</div>
+  </div>
+  
+  <div class="equipment-item">
+    <div><a href="#">クリップ</a></div>
+    <div>文房具</div>
+    <div>B1倉庫</div>
+    <div>在庫数: 10</div>
+  </div>
+  
+  <div class="equipment-item">
+    <div><a href="#">バインダー</a></div>
+    <div>文房具</div>
+    <div>B1倉庫</div>
+    <div>在庫数: 1</div>
+  </div> -->
+  
+</div>
+
+
+</body></html>
