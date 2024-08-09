@@ -13,5 +13,5 @@ class Equipment(models.Model):
   quantity = models.PositiveIntegerField(null=False)
   status = models.CharField(max_length=10)
   image = models.ImageField(upload_to='images/', blank=True, null=True)
-  # created_at = models.DateTimeField(auto_now_add=True)
-  # updated_at = models.DateTimeField(auto_now=True)
+  created_at = models.DateTimeField(auto_now_add=True)
+  updated_at = models.DateTimeField(auto_now=True)

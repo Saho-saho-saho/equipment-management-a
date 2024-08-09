@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{ equipment.name }}</title>
+  
+  <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-left">
+      
+        <a href="/equipment_list/">備品一覧</a>
+        <a href="/order_history/">発注履歴</a>
+      
+    </div>
+    <div class="nav-right">
+      
+        
+          <a href="/users/">ユーザー一覧</a>
+        
+        <a href="/logout/">ログアウト</a>
+      
+    </div>
+  </nav>
+  <div class="container">
+    
+<div class="header-banner center-text">
+  <div class="equipment-title-container">
+    <h1 class="center-text">{{ equipment.name }}</h1>
+    
+    <a href="/equipment/4/edit/" class="btn">編集</a>
+    
+  </div>
+</div>
+<div class="center-text">
+  <img src="{{ equipment.image.url }}" alt="{{ equipment.name }}" style="max-width: 300px; max-height: 300px; margin-top: 20px;">
+  <p>{{ equipment.description }}</p>
+  <p>カテゴリ: {{ equipment.category }}</p>
+  <p>状態: {{ equipment.status }}</p>
+  <p>設置場所: {{ equipment.location }}</p>
+  <p>在庫数: {{ equipment.quantity }}</p>
+</div>
+
+<!-- ここから下は未実装 -->
+<p style="color: red;"><strong>↓↓↓↓↓↓↓↓↓ここから下は未実装↓↓↓↓↓↓↓↓↓</strong></p>
+<!-- 終わったら消す -->
+
+<h2 class="center-text">在庫数を変更</h2>
+<form method="post" class="quantity-change-container center-text">
+  <input type="hidden" name="csrfmiddlewaretoken" value="ZPTe4D11isLcOILYGS37mkapP73lqFke4vd8Eiz0zsVlEIaiUw5ImZf6SQTz90uf">
+  <div class="form-group">
+    <label for="id_quantity">在庫数:</label>
+    <input type="number" name="quantity" value="5" min="0" required id="id_quantity">
+  </div>
+  <button type="submit" class="btn">保存</button>
+</form>
+
+
+<h2 class="center-text">在庫数の変更履歴</h2>
+<ul class="center-text">
+  
+  <li>2024年8月7日10:53 - ys: 5 に変更</li>
+  
+  <li>2024年8月7日10:53 - ys: 5 に変更</li>
+  
+  <li>2024年8月6日19:57 - test-tarou: 5 に変更</li>
+  
+</ul>
+
+<h2 class="center-text">発注依頼</h2>
+<form method="post" class="order-request-form center-text">
+  <input type="hidden" name="csrfmiddlewaretoken" value="ZPTe4D11isLcOILYGS37mkapP73lqFke4vd8Eiz0zsVlEIaiUw5ImZf6SQTz90uf">
+  <div class="form-group">
+    <label for="id_quantity_requested">発注数:</label>
+    <input type="number" name="quantity_requested" required id="id_quantity_requested">
+  </div>
+  <button type="submit" class="btn">発注依頼</button>
+</form>
+
+
+<h2 class="center-text">発注依頼の承認</h2>
+<ul class="center-text">
+  
+  <li class="order-item">
+    <div class="order-item-content">
+      <p>2024年8月7日12:22 - test: 2 -
+        <span class="status-approved">
+          承認済み
+        </span>
+      </p>
+      
+    </div>
+  </li>
+  
+  <li class="order-item">
+    <div class="order-item-content">
+      <p>2024年8月7日12:19 - ys: 5 -
+        <span class="status-approved">
+          承認済み
+        </span>
+      </p>
+      
+    </div>
+  </li>
+  
+  <li class="order-item">
+    <div class="order-item-content">
+      <p>2024年8月7日9:59 - ys: 1 -
+        <span class="status-approved">
+          承認済み
+        </span>
+      </p>
+      
+    </div>
+  </li>
+  
+  <li class="order-item">
+    <div class="order-item-content">
+      <p>2024年8月6日19:55 - tech-camp: 6 -
+        <span class="status-approved">
+          承認済み
+        </span>
+      </p>
+      
+    </div>
+  </li>
+  
+</ul>
+
+
+
+  </div>
+</body>
+
+</html>

@@ -41,7 +41,7 @@
   
   {% for equipment in equipments %}
   <div class="equipment-item">
-    <div><a href="#">{{ equipment.name }}</a></div>
+    <div><a href="{% url 'equipments:detail' equipment.id %}">{{ equipment.name }}</a></div>
     <div>{{ equipment.category }}</div>
     <div>{{ equipment.location }}</div>
     <div>{{ equipment.quantity }}</div>
